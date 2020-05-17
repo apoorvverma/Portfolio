@@ -39,7 +39,7 @@
 - [Contributors ✨](#contributors-)
 - [License 📄](#license-)
  -->
-
+<a href="https://hashirshoaeb.com">About Me</a>
 ## Technology Stack 🛠️
 
 Dependencies defined in package.json:
