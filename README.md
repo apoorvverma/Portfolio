@@ -3,7 +3,7 @@
 <p align="center">
   <h1 align="center">Developer's Portfolio ✨</h1>
 
-  <p align="center">
+  <!-- <p align="center">
     It is a personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects. Site URL / Demo: 
     <a href="https://hashirshoaeb.github.io">hashirshoaeb.github.io</a>
     <br />
@@ -38,6 +38,7 @@
 - [Showcase 🚀](#showcase-)
 - [Contributors ✨](#contributors-)
 - [License 📄](#license-)
+ -->
 
 ## Technology Stack 🛠️
 
@@ -122,7 +123,7 @@ You should have [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/
      https://<your-username>.github.io/home
    ```
 
-Facing issues? Feel free to contact at hashirshoaeb@gmail.com.
+<!-- Facing issues? Feel free to contact at hashirshoaeb@gmail.com.
 
 ## Contributing 🙌
 
@@ -258,4 +259,4 @@ Have you changed something in the code to create your own version? Feel free to 
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/hashirshoaeb/home.svg)](https://starchart.cc/hashirshoaeb/home)
+[![Stargazers over time](https://starchart.cc/hashirshoaeb/home.svg)](https://starchart.cc/hashirshoaeb/home) -->
