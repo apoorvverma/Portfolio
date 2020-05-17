@@ -35,7 +35,7 @@ const MainBody = () => {
         <div id="stars"></div>
         <div className="container container-fluid text-center ">
           <h1 className="display-1">
-            {FirstName + " " + MiddleName + " " + LastName}
+            <b>{FirstName + " " + MiddleName + " " + LastName}</b>
           </h1>
           <Typist className="lead"> {devDesc}</Typist>
           <div className="p-5">
