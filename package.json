@@ -1,12 +1,7 @@
 {
   "name": "developers-portfolio",
-<<<<<<< HEAD
   "description": "A personal static website/portfolio template hosted with Netlify, built to showcase my recent projects.",
-  "homepage": "apoorvverma.me",
-=======
-  "description": "A personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects.",
   "homepage": "./",
->>>>>>> 08e87755d51f2162e8ac37004d6236aba1f44aaf
   "version": "0.1.0",
   "private": true,
   "author": {
