@@ -38,8 +38,8 @@
 - [Showcase 🚀](#showcase-)
 - [Contributors ✨](#contributors-)
 - [License 📄](#license-)
+<a href="https://apoorvverma.github.io">About Me</a>
  -->
-
 ## Technology Stack 🛠️
 
 Dependencies defined in package.json:
