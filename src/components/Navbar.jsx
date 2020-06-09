@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Pdf from "../editable-stuff/resume.pdf";
+import logo from "../avlogo.png";
 import { showBlog, FirstName } from "../editable-stuff/configurations.json";
 
 const Navbar = (props) => {
@@ -21,7 +22,8 @@ const Navbar = (props) => {
       } `}
     >
       <a className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
-        {`<${FirstName} />`}
+        {/* {`<${FirstName} />`} */}
+        <img src={logo} alt="Logo" height="50px" />
       </a>
       <button
         className="navbar-toggler"
