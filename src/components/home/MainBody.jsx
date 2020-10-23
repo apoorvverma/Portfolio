@@ -34,7 +34,7 @@ const MainBody = () => {
       >
         <div id="stars"></div>
         <div className="container container-fluid text-center ">
-          <h1>My Portfolio</h1>
+          //<h1>My Portfolio</h1>
           <h1 className="display-1">
             <b>{FirstName + " " + MiddleName + " " + LastName}</b>
           </h1>
