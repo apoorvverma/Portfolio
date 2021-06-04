@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Pdf from "../editable-stuff/resume.pdf";
+import logo from "../avlogo.png";
 import { showBlog, FirstName } from "../editable-stuff/configurations.json";
 import { ReactComponent as Logon } from './AVF.svg';
 
@@ -22,12 +23,17 @@ const Navbar = (props) => {
       } `}
     >
       <a className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
+<<<<<<< HEAD
       
       <Logon alt="Apoorv Verma" height={55} width={68}/>
       {/* <img src="/smol.png" alt="Apoorv Verma" /> */}
       
       {/* <img src="AVfinal.png" class="img-responsive" /> */}
         {/* {`<${FirstName} />`} */}
+=======
+        {/* {`<${FirstName} />`} */}
+        <img src={logo} alt="Logo" height="50px" />
+>>>>>>> 78a5a7592ffb283669df821245d187475c94b955
       </a>
       <button
         className="navbar-toggler"
