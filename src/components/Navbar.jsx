@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Pdf from "../editable-stuff/resume.pdf";
 import { showBlog, FirstName } from "../editable-stuff/configurations.json";
+import { ReactComponent as Logon } from './AVF.svg';
 
 const Navbar = (props) => {
   const [isTop, setIsTop] = useState(true);
@@ -21,7 +22,12 @@ const Navbar = (props) => {
       } `}
     >
       <a className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
-        {`<${FirstName} />`}
+      
+      <Logon alt="Apoorv Verma" height={55} width={68}/>
+      {/* <img src="/smol.png" alt="Apoorv Verma" /> */}
+      
+      {/* <img src="AVfinal.png" class="img-responsive" /> */}
+        {/* {`<${FirstName} />`} */}
       </a>
       <button
         className="navbar-toggler"
