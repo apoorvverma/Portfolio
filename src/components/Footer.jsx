@@ -1,25 +1,18 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faReact } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   const [bgStyle] = useState({ backgroundColor: "#f5f5f5" });
 
   return (
     <footer style={bgStyle} className="mt-auto py-3 text-center">
-      {/* <strong> &copy; 2019 </strong>*/}
-      <i className="fas fa-code"></i> with <i className="fas fa-heart"></i>{" "}
-      {/* by
-      <a
-        className="badge badge-dark"
-        rel="noopener"
-        href="https://github.com/apoorvverma"
-        aria-label="My GitHub"
-      >
-        Apoorv Verma
-      </a>{" "} */}
-      using <i className="fab fa-react"></i>
+      <FontAwesomeIcon icon={faCode} /> with{" "}
+      <FontAwesomeIcon icon={faHeart} style={{ color: "#e73c7e" }} />{" "}
+      using <FontAwesomeIcon icon={faReact} style={{ color: "#61dafb" }} />
       <p>
         <small className="text-muted">
-          {" "}
           Project code is open source. Feel free to fork and make your own
           version.
         </small>

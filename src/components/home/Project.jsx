@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import ProjectCard from "./ProjectCard";
-import {
-  projectHeading,
-  gitHubLink,
-  gitHubUsername,
-  gitHubQuerry,
-  projectsLength,
-} from "../../editable-stuff/configurations.json";
+import config from "../../editable-stuff/configurations.json";
+
+const { projectHeading, gitHubLink, gitHubUsername, gitHubQuerry, projectsLength } = config;
 
 const Project = () => {
   const [projectsArray, setProjectsArray] = useState([]);

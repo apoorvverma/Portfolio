@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const ProjectCard = ({ value }) => {
   const [updated_at, setUpdatedAt] = useState("0 mints");
@@ -46,7 +48,6 @@ const ProjectCard = ({ value }) => {
   return (
     <div className="col-md-6">
       <div className="card shadow-lg p-3 mb-5 bg-white rounded">
-        {/* <img src="" className="card-img-top" alt="..." /> */}
         <div className="card-body">
           <h5 className="card-title">{name} </h5>
           <p className="card-text">{description} </p>
@@ -54,20 +55,20 @@ const ProjectCard = ({ value }) => {
             href={`${svn_url}/archive/master.zip`}
             className="btn btn-outline-secondary mr-3"
           >
-            <i className="fab fa-github" /> Clone Project
+            <FontAwesomeIcon icon={faGithub} /> Clone Project
           </a>
           <a
             href={svn_url}
             target=" _blank"
             className="btn btn-outline-secondary"
           >
-            <i className="fab fa-github" /> Repo
+            <FontAwesomeIcon icon={faGithub} /> Repo
           </a>
           <hr />
           <Language value={languages_url}></Language>
           <p className="card-text">
             <span className="text-dark card-link mr-4">
-              <i className="fab fa-github" /> Stars{" "}
+              <FontAwesomeIcon icon={faGithub} /> Stars{" "}
               <span className="badge badge-dark">{stargazers_count}</span>
             </span>
             <small className="text-muted">Updated {updated_at}</small>
@@ -86,16 +87,10 @@ const Language = ({ value }) => {
       axios
         .get(value)
         .then((response) => {
-          // handle success
-          // console.log(response.data);
           return setData(response.data);
         })
         .catch((error) => {
-          // handle error
           return console.error(error.message);
-        })
-        .finally(() => {
-          // always executed
         });
     },
     [value]
@@ -110,9 +105,7 @@ const Language = ({ value }) => {
   for (let index in data) {
     array.push(index);
     total_count += data[index];
-    // console.log(index, this.state.data[index]);
   }
-  // console.log("array contains ", array, this.state.data[array[0]]);
 
   return (
     <div className="pb-3">

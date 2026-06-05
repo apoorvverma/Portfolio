@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import Typist from "react-typist";
-import {
-  FirstName,
-  LastName,
-  MiddleName,
-  devDesc,
-  icons,
-} from "../../editable-stuff/configurations.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import config from "../../editable-stuff/configurations.json";
+
+const { FirstName, LastName, MiddleName, devDesc, icons } = config;
 
 const MainBody = () => {
-  // const [backgroundType, setBackgroundType] = useState(Configs.backgroundType);
   const [hoverstatus, setHoverstatus] = useState(
     new Array(icons.length).fill("socialicons")
   );
@@ -45,10 +41,13 @@ const MainBody = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={icon.url}
-                aria-label={`My ${icon.image.split("-")[1]}`}
+                aria-label={`My ${icon.image.split("-")[1]} profile`}
+                className="social-icon-link"
               >
-                <i
-                  className={`fab ${icon.image}  fa-3x ${hoverstatus[icon.id]}`}
+                <FontAwesomeIcon
+                  icon={["fab", icon.image.replace("fa-", "")]}
+                  size="3x"
+                  className={hoverstatus[icon.id]}
                   onMouseOver={() => toggleHover({ icon, event: "enter" })}
                   onMouseOut={() => toggleHover({ icon, event: "leave" })}
                 />
