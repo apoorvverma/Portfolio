@@ -41,7 +41,7 @@ const MainBody = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={icon.url}
-                aria-label={`My ${icon.image.split("-")[1]} profile`}
+                aria-label={`View my ${icon.label}`}
                 className="social-icon-link"
               >
                 <FontAwesomeIcon

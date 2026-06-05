@@ -11,38 +11,34 @@
       "id": 0,
       "image": "fa-github",
       "url": "https://github.com/apoorvverma",
-      "style": "socialicons"
+      "label": "GitHub profile"
     },
     {
       "id": 1,
       "image": "fa-facebook",
       "url": "https://www.facebook.com/apoorv.verma.33633",
-      "style": "socialicons"
+      "label": "Facebook profile"
     },
     {
       "id": 2,
       "image": "fa-instagram",
       "url": "https://www.instagram.com/verma.apoorv/",
-      "style": "socialicons"
+      "label": "Instagram profile"
     },
     {
       "id": 3,
       "image": "fa-linkedin",
       "url": "https://www.linkedin.com/in/apoorv1999verma/",
-      "style": "socialicons"
+      "label": "LinkedIn profile"
     },
     {
       "id": 4,
       "image": "fa-twitter",
       "url": "https://www.twitter.com/1999apoorv/",
-      "style": "socialicons"
+      "label": "Twitter profile"
     }
   ],
   "aboutHeading": "About Me",
-  "showInstaProfilePic": true,
-  "instaLink": "https://www.instagram.com/",
-  "instaUsername": "verma.apoorv",
-  "instaQuerry": "/?__a=1",
   "aboutDescription": "A Curious Guy pursuing Computer Science Engineering from Shri Vaishnav Vidyapeeth Vishwavidyalaya - Indore, India. Having 2+ years of experience as a student member in Microsoft Campus Club, SVVV & currently the Student Co-ordinator of This Club!",
   "projectHeading": "Recent Projects",
   "gitHubLink": "https://api.github.com/users/",

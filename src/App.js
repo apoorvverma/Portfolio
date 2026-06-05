@@ -17,14 +17,19 @@ const Home = () => {
   return (
     <Fragment>
       <MainBody />
-      <AboutMe />
-      <Project />
+      <main id="main-content">
+        <AboutMe />
+        <Project />
+      </main>
     </Fragment>
   );
 };
 
 const App = () => (
   <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
+    <a href="#main-content" className="skip-link">
+      Skip to main content
+    </a>
     {showNavigationbar && <Navbar />}
     <Route path="/" exact component={Home} />
     {showBlog && <Route path="/blog" exact component={Blog} />}
