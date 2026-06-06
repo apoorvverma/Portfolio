@@ -1,6 +1,5 @@
 import React, { useState, FC } from "react";
-import * as TypistModule from "react-typist";
-const Typist = (TypistModule as any).default || TypistModule;
+import Typist from "../Typist";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import config from "../../editable-stuff/configurations.json";
 import { SocialIcon, AppConfig } from "../../types";

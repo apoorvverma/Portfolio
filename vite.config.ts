@@ -31,29 +31,19 @@ export default defineConfig({
     },
   },
 
-  // Build configuration
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'react-typist'],
+  },
+
+  // Handle CommonJS modules
   build: {
     outDir: 'build',
     sourcemap: false,
-    // Use default minifier (esbuild) instead of terser
     minify: 'esbuild',
     target: 'es2015',
-  },
-
-  // Development server configuration
-  server: {
-    port: 3000,
-    open: true,
-    host: true,
-  },
-
-  // Preview server for production builds
-  preview: {
-    port: 4173,
-  },
-
-  // Optimize dependencies
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
+    commonjsOptions: {
+      include: [/react-typist/, /node_modules/],
+    },
   },
 });
