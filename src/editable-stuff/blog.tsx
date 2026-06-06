@@ -1,4 +1,5 @@
 import { BlogBuilder } from "../components/blog/BlogBuilder";
+
 const bloglist = [];
 
 const blog = new BlogBuilder({
@@ -39,4 +40,4 @@ const blog1 = new BlogBuilder({
 bloglist.push(blog1);
 bloglist.push(blog);
 
-export default bloglist;
+export default bloglist as BlogBuilder[];

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, FC } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -11,9 +11,14 @@ import Navbar from "./components/Navbar";
 import { Blog } from "./components/blog/Blog";
 import BlogPost from "./components/blog/BlogPost";
 
-const { showNavigationbar, showBlog } = config;
+interface AppConfig {
+  showNavigationbar: boolean;
+  showBlog: boolean;
+}
 
-const Home = () => {
+const { showNavigationbar, showBlog } = config as AppConfig;
+
+const Home: FC = () => {
   return (
     <Fragment>
       <MainBody />
@@ -25,7 +30,7 @@ const Home = () => {
   );
 };
 
-const App = () => (
+const App: FC = () => (
   <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
     <a href="#main-content" className="skip-link">
       Skip to main content

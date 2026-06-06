@@ -1,27 +1,23 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, FC } from "react";
 import axios from "axios";
 import ProjectCard from "./ProjectCard";
 import config from "../../editable-stuff/configurations.json";
+import { GitHubRepo, AppConfig } from "../../types";
 
-const { projectHeading, gitHubLink, gitHubUsername, gitHubQuerry, projectsLength } = config;
+const typedConfig = config as AppConfig;
+const { projectHeading, gitHubLink, gitHubUsername, gitHubQuerry, projectsLength } = typedConfig;
 
-const Project = () => {
-  const [projectsArray, setProjectsArray] = useState([]);
+const Project: FC = () => {
+  const [projectsArray, setProjectsArray] = useState<GitHubRepo[]>([]);
 
-  const handleRequest = useCallback((e) => {
+  const handleRequest = useCallback(() => {
     axios
-      .get(gitHubLink + gitHubUsername + gitHubQuerry)
+      .get<GitHubRepo[]>(gitHubLink + gitHubUsername + gitHubQuerry)
       .then((response) => {
-        // handle success
-        // console.log(response.data.slice(0, 4));
-        return setProjectsArray(response.data.slice(0, projectsLength));
+        setProjectsArray(response.data.slice(0, projectsLength));
       })
       .catch((error) => {
-        // handle error
-        return console.error(error.message);
-      })
-      .finally(() => {
-        // always executed
+        console.error(error.message);
       });
   }, []);
 
@@ -31,7 +27,7 @@ const Project = () => {
 
   return (
     <div id="projects" className="jumbotron jumbotron-fluid bg-transparent m-0">
-      {projectsArray.length && (
+      {projectsArray.length > 0 && (
         <div className="container container-fluid p-5">
           <h1 className="display-4 pb-5">{projectHeading}</h1>
           <div className="row">

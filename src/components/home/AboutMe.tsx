@@ -1,10 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
 import Pdf from "../../editable-stuff/resume.pdf";
 import config from "../../editable-stuff/configurations.json";
+import { AppConfig } from "../../types";
 
-const { aboutHeading, aboutDescription } = config;
+const typedConfig = config as AppConfig;
+const { aboutHeading, aboutDescription } = typedConfig;
 
-const AboutMe = () => {
+const AboutMe: FC = () => {
   return (
     <div id="aboutme" className="jumbotron jumbotron-fluid m-0">
       <div className="container container-fluid p-5">

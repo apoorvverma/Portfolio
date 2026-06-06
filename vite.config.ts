@@ -35,7 +35,8 @@ export default defineConfig({
   build: {
     outDir: 'build',
     sourcemap: false,
-    minify: 'terser',
+    // Use default minifier (esbuild) instead of terser
+    minify: 'esbuild',
     target: 'es2015',
   },
 

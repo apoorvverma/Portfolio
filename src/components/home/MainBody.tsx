@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import Typist from "react-typist";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import config from "../../editable-stuff/configurations.json";
+import { SocialIcon, AppConfig } from "../../types";
 
-const { FirstName, LastName, MiddleName, devDesc, icons } = config;
+const typedConfig = config as AppConfig;
+const { FirstName, LastName, MiddleName, devDesc, icons } = typedConfig;
 
-const MainBody = () => {
-  const [hoverstatus, setHoverstatus] = useState(
+interface HoverToggleData {
+  icon: SocialIcon;
+  event: "enter" | "leave";
+}
+
+const MainBody: FC = () => {
+  const [hoverstatus, setHoverstatus] = useState<string[]>(
     new Array(icons.length).fill("socialicons")
   );
 
-  const toggleHover = (data) => {
+  const toggleHover = (data: HoverToggleData): void => {
     const newhoverStatus = [...hoverstatus];
 
     if (data.event === "enter") {
       newhoverStatus[data.icon.id] = "socialiconshover";
-      return setHoverstatus(newhoverStatus);
+      setHoverstatus(newhoverStatus);
     } else if (data.event === "leave") {
       newhoverStatus[data.icon.id] = "socialicons";
-      return setHoverstatus(newhoverStatus);
+      setHoverstatus(newhoverStatus);
     }
   };
 
@@ -35,7 +42,7 @@ const MainBody = () => {
           </h1>
           <Typist className="lead"> {devDesc}</Typist>
           <div className="p-5">
-            {icons.map((icon) => (
+            {icons.map((icon: SocialIcon) => (
               <a
                 key={icon.id}
                 target="_blank"

@@ -1,29 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FC } from "react";
 import { Link } from "react-router-dom";
 import Pdf from "../editable-stuff/resume.pdf";
 import logo from "../avlogo.png";
 import config from "../editable-stuff/configurations.json";
+import { AppConfig } from "../types";
 
-const { showBlog } = config;
+const typedConfig = config as AppConfig;
+const { showBlog } = typedConfig;
 
-const Navbar = (props) => {
-  const [isTop, setIsTop] = useState(true);
-  const [isExpanded, setIsExpanded] = useState(false);
+const Navbar: FC = () => {
+  const [isTop, setIsTop] = useState<boolean>(true);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   useEffect(() => {
-    document.addEventListener("scroll", () => {
+    const handleScroll = (): void => {
       const istop = window.scrollY < 200;
       if (istop !== isTop) {
         setIsTop(istop);
       }
-    });
+    };
+
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
   }, [isTop]);
 
-  const toggleNavbar = () => {
+  const toggleNavbar = (): void => {
     setIsExpanded(!isExpanded);
   };
 
-  const closeNavbar = () => {
+  const closeNavbar = (): void => {
     setIsExpanded(false);
   };
 
@@ -31,7 +36,7 @@ const Navbar = (props) => {
     <nav
       className={`navbar navbar-expand-lg fixed-top navbar-light ${
         isTop ? "bg-transparent" : "bg-gradient"
-      } `}
+      }`}
     >
       <a className="navbar-brand" href={process.env.PUBLIC_URL + "/#home"}>
         <img src={logo} alt="Logo" height="50px" />

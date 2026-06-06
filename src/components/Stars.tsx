@@ -10,17 +10,21 @@
  * - Configurable star count and animation speed
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, FC } from 'react';
+
+interface Star {
+  x: number;
+  y: number;
+  size: number;
+  opacity: number;
+  animationDuration: number;
+}
 
 /**
  * Generate random star positions
- * @param {number} count - Number of stars to generate
- * @param {number} maxX - Maximum X position
- * @param {number} maxY - Maximum Y position
- * @returns {Array} Array of star objects with x, y, size, and opacity
  */
-function generateStars(count, maxX, maxY) {
-  const stars = [];
+function generateStars(count: number, maxX: number, maxY: number): Star[] {
+  const stars: Star[] = [];
   for (let i = 0; i < count; i++) {
     stars.push({
       x: Math.random() * maxX,
@@ -36,15 +40,15 @@ function generateStars(count, maxX, maxY) {
 /**
  * Stars component - renders an animated star field
  */
-function Stars() {
-  const containerRef = useRef(null);
+const Stars: FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     // Configuration
-    const starCount = 150; // Reduced from 2000+ CSS shadows
+    const starCount = 150;
     const maxX = 2000;
     const maxY = 2000;
 
@@ -84,6 +88,6 @@ function Stars() {
       aria-hidden="true"
     />
   );
-}
+};
 
 export default Stars;
