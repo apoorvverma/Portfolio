@@ -1,5 +1,4 @@
 import React, { useState, FC } from "react";
-import Typist from "../Typist";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import config from "../../editable-stuff/configurations.json";
 import { SocialIcon, AppConfig } from "../../types";
@@ -40,7 +39,7 @@ const MainBody: FC = () => {
           <h1 className="display-1">
             <b>{FirstName + " " + MiddleName + " " + LastName}</b>
           </h1>
-          <Typist className="lead"> {devDesc}</Typist>
+          <span className="lead"> {devDesc}</span>
           <div className="p-5">
             {icons.map((icon: SocialIcon) => (
               <a
