@@ -39,8 +39,8 @@ export default defineConfig({
   // Handle CommonJS modules
   build: {
     outDir: 'build',
-    sourcemap: false,
-    minify: 'esbuild',
+    sourcemap: true,
+    minify: false,
     target: 'es2015',
     commonjsOptions: {
       include: [/react-typist/, /node_modules/],
